@@ -3,11 +3,10 @@ import {
 } from 'vue'
 import App from './App.vue'
 import { pinia } from './store'
-// import uvUI from 'uv-ui'
-// import '../node_modules/uv-ui/dist/style.css'
+import uView from 'vk-uview-ui'
 export function createApp () {
   const app = createSSRApp(App)
-  // app.use(uvUI)
+  app.use(uView)
   app.use(pinia)
   return {
     app

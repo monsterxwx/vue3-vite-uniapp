@@ -28,6 +28,26 @@
       href="https://uniapp.dcloud.io/"
       text="https://uniapp.dcloud.io/"
     />
+    <u-rate
+      :count="count"
+      v-model="countValue"
+    />
+    <u-empty
+      text="所谓伊人，在水一方"
+      mode="list"
+    />
+    <u-popup
+      v-model="show"
+      mode="bottom"
+      border-radius="20"
+    >
+      <view style="padding: 20rpx;">
+        出淤泥而不染，濯清涟而不妖
+      </view>
+    </u-popup>
+    <u-button @click="show = true">
+      打开
+    </u-button>
   </view>
 </template>
 
@@ -39,10 +59,11 @@ import { onLoad, onShow } from '@dcloudio/uni-app'
 import uni from '@/utils/useUni'
 const store = useStore()
 const title = ref('Hello3')
-const app = getApp()
+const count = ref(4)
+const countValue = ref('')
+const show = ref(false)
 onLoad(() => {
   console.log('ee')
-  console.log(app)
 })
 onShow(() => {
   console.log('e')
